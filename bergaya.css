@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+section {
+    min-height: 100vh;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: #1B2430;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color:#fff;
+    font-weight: 600;
+    cursor: default;
+}
+
+nav a {
+    color:#fff;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 4rem;
+}
+
+#menu-icon{
+    font-size: 3rem;
+    color: white;
+    display: none;
+}
+
+nav a:hover {
+    color: #816797;
+}
+
+.list-surah {
+    margin-bottom: 5rem;
+}
+
+.textListSurah {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 12rem;
+    font-size: 3.5rem;
+    color: #51557E;
+}
+
+.asmaul-alhusna {
+    margin-bottom: 5rem;
+}
+
+.container {
+    font-display: grid;
+    background-color: #fff;
+    width: 23rem;
+    margin: auto auto 15px auto;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 20px #cbccd6;
+    transition: .5s ease-out;
+}
+
+.container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px #989cc0;
+}
+
+#result {
+    color: #51557E;
+    display: grid;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 6rem;
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.asma {
+    margin-top: 1.3rem;
+    font-size: 2rem;
+}
+
+.jumlah-ayat {
+    margin-top: 1rem;
+}
+
+.arti {
+    margin-top: 1rem;
+}
+
+.container-asmaalhusna {
+    background-color: #fff;
+    width: 20rem;
+    margin: auto auto 15px auto;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 20px #cbccd6;
+    transition: .3s ease-out;
+}
+
+.container-asmaalhusna:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px #989cc0;
+}
+
+#resultt {
+    color: #51557E;
+    display: grid;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 6rem;
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.transliteration {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.textAsmaulHusma {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 12rem;
+    font-size: 3.5rem;
+    color: #51557E;
+}
+
+.name {
+    font-size: 5rem;
+}
+
+.container-jadwalsholat {
+    padding: 0 5rem 5rem 5rem;
+}
+
+.card-header {
+    color: #fff;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-primary th {
+    background-color: #51557E;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.card {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 8px;
+    font-size: 1.3rem;
+} 
+.table-primary td {
+    font-weight: bold;
+    color: #816797;
+    background-color: #e7e8f5;
+}
+
+.textJadwalSholat {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 12rem;
+    font-size: 3.5rem;
+    color: #51557E;
+}
+
+.container-lokasi {
+    background: #51557E;
+    width: 48%;
+    height: 5rem;
+    border-radius: 5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container-button {
+    display: flex;
+    width: 38rem;
+    justify-content: space-between;
+}
+
+.container-daerah {
+    background: #51557E;
+    width: 48%;
+    height: 5rem;
+    border-radius: 5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container-lokasi p {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.container-daerah p {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    gap: 11rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    align-items: center;
+    background-color: #e7e8f5;
+}
+
+.textHome {
+    text-align: left;
+    margin-top: 8rem;
+    font-size: 5.7rem;
+    color: #51557E;
+}
+
+.jargon {
+    font-size: 1.3rem;
+    text-align: left;
+    color: #1B2430;
+}
+
+.home-title p {
+    text-align: left;
+    font-size: 2rem;
+    color: #1B2430;
+    margin-bottom: 4rem;
+}
+
+.button {
+    padding: 1rem 2.8rem;
+    background: #fff;
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem #989cc0;
+    font-size: 1.6rem;
+    color: #51557E;
+    font-weight: 600;
+}
+
+.home-img img {
+    margin-top: 10rem;
+    width: 40vw;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    gap: 11rem;
+}
+
+.textAbout {
+    text-align: left;
+    margin-top: 10rem;
+    font-size: 5rem;
+    color: #51557E;
+}
+
+.jargon {
+    font-size: 2.2rem;
+    text-align: left;
+    color: #1B2430;
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    text-align: left;
+    font-size: 1.4rem;
+    color: #1B2430;
+}
+
+.about-img img {
+    margin-top: 10rem;
+    width: 40vw;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: #e7e8f5;
+}
+
+.footer-text {
+    font-size: 1.6rem;
+    color: #1B2430;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #51557E;
+    padding: .8rem;
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem #51557E;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: #e7e8f5;
+}
+
+/* BREAK POINT */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 1rem 3% 2rem;
+    }
+
+    .textHome {
+        font-size: 4.3rem;
+    }
+
+    .textAbout {
+        font-size: 4.3rem;
+    }
+
+    .list-surah {
+        padding-bottom: 7rem;
+    }
+
+    #result {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .asmaul-alhusna {
+        padding-bottom: 7rem;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 90%;
+        padding-right: 1rem 3%;
+        background: #1B2430;
+        border-top: 1rem solid rgb(0,0,0,0.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .textHome {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+    }
+
+    .textJadwalSholat {
+        margin-bottom: 3rem;
+    }
+
+    .textAsmaulHusma {
+        margin-bottom: 3rem;
+    }
+
+    #resultt {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .textListSurah {
+        margin-bottom: 3rem;
+    }
+
+    #result {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .navbar {
+        margin-left: 50rem;
+        padding-left: 5rem;
+    }
+
+}
+
+@media (max-width: 617px) {
+    #resultt {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #result {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .about-img img {
+        width: 70vw;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .home-img img {
+        width: 70vw;
+        margin-top: 0.5px;
+    }
+
+    html {
+        font-size: 40%;
+    }
+
+    .about-img img {
+        width: 70vw;
+        margin-top: 0.5px;
+    }
+
+    .textHome {
+        font-size: 4.3rem;
+    }
+
+    .textAbout {
+        font-size: 4.2rem;
+    }
+
+    .textAsmaulHusma {
+        font-size: 5rem;
+    }
+
+    .textListSurah {
+        font-size: 5rem;
+    }
+
+    #resultt {
+        grid-template-columns: 1fr;
+    }
+
+    .nama {
+        font-size: 3rem;
+    }
+
+    .asma {
+        font-size: 3rem;
+    }
+
+    .jumlah-ayat {
+        font-size: 2rem;
+    }
+
+    .arti {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 30rem;
+    }
+
+    .container-asmaalhusna {
+        width: 25rem;
+    }
+
+    #result {
+        grid-template-columns: 1fr;
+    }
+
+    .name {
+        font-size: 7rem;
+    }
+
+    .transliteration {
+        font-size: 2rem;
+    }
+    
+    .container-jadwalsholat {
+        padding: 1rem 1rem 1rem;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+}

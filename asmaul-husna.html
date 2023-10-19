@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moesleem</title>
+    <link rel="stylesheet" href="bergaya.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body> 
+    <header class="header">
+        <a class="logo" href="#">Moesleem</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="jadwal-sholat.html">Jadwal sholat</a>
+            <a href="asmaul-husna.html">Asmaul husna</a>
+            <a href="list-surah.html">List surah</a>
+        </nav>
+    </header>
+    
+    <section class="asmaul-alhusna">
+        <h1 class="textAsmaulHusma">Asmaul Husna</h1>
+        <div id="resultt"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 Moesleem | All Right Reservered.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        }
+
+        window.onscroll = () => {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+
+        window.onload = function() {
+        getDataAsma();
+    }
+
+    function getDataAsma() {
+        fetch('https://api.aladhan.com/v1/asmaAlHusna')
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error('Gagal mengambil data');
+            }
+            return response.json();
+        }) 
+        .then(function(asma) {
+            displayDataAsma(asma);
+        })
+        .catch(function(error) {
+            console.log("terjadi kesalahan", error);
+        })
+    }
+
+    function displayDataAsma(asma) {
+        var resultDiv = document.getElementById('resultt');
+        resultDiv.innerHTML = '';
+
+        asma.data.forEach(function(surat) {
+            var suratDiv = document.createElement('div');
+            suratDiv.classList.add('surah');
+            suratDiv.className = 'container-asmaalhusna';
+
+            var nameAsma = document.createElement('h2');
+            nameAsma.className = 'name';
+            nameAsma.textContent = surat.name;
+
+            var transliterationAsma = document.createElement('p');
+            transliterationAsma.className = 'transliteration';
+            transliterationAsma.textContent = surat.transliteration;
+
+            suratDiv.appendChild(nameAsma);
+            suratDiv.appendChild(transliterationAsma);
+
+            resultDiv.appendChild(suratDiv);
+        }) 
+    }
+    </script>
+</body>
+</html>

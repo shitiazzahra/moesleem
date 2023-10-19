@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moesleem</title>
+    <link rel="stylesheet" href="bergaya.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="#">Moesleem</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="jadwal-sholat.html">Jadwal sholat</a>
+            <a href="asmaul-husna.html">Asmaul husna</a>
+            <a href="list-surah.html">List surah</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-title">
+            <h1 class="textHome">Make it a priority <br>with Moesleem</h1>
+            <p class="jargon">Moesleem reminder for your self</p>
+            <div class="container-button">
+                <a class="button" href="jadwal-sholat.html">See Jadwal</a>
+                <a class="button" href="#about">About Moesleem</a>
+            </div>
+        </div>
+        
+        <div class="home-img">
+            <img src="image/mosque.png" alt="mosque">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-img">
+            <img src="image/mosque.png" alt="mosque">
+        </div>
+
+        <div class="about-title">
+            <h1 class="textAbout">About Moesleem</h1>
+            <p class="jargon">Moesleem reminder for your self</p>
+            <p class="about-text">Moesleem is a website used to view prayer schedules according to place, and can also see the surah of the Koran and provide asmaul husna to always remember God Almighty.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 Moesleem | All Right Reservered.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        }
+
+        window.onscroll = () => {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

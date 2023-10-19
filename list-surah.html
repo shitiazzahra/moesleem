@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moesleem</title>
+    <link rel="stylesheet" href="bergaya.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head> 
+<body>
+    <header class="header">
+        <a class="logo" href="#">Moesleem</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="jadwal-sholat.html">Jadwal sholat</a>
+            <a href="asmaul-husna.html">Asmaul husna</a>
+            <a href="list-surah.html">List surah</a>
+        </nav>
+    </header>
+
+    <section class="list-surah">
+        <h2 class="textListSurah">Al-Quran Surah</h2>
+            <div id="result"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 Moesleem | All Right Reservered.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        }
+
+        window.onscroll = () => {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+
+        window.onload = function() {
+        getData();
+    }
+
+    function getData() {
+        fetch('https://api.banghasan.com/quran/format/json/surat')
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error('Gagal mengambil data');
+            }
+            return response.json();
+        }) 
+        .then(function(data) {
+            displayData(data);
+        })
+        .catch(function(error) {
+            console.log("terjadi kesalahan", error);
+        })
+    }
+
+    function displayData(data) {
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '';
+
+        data.hasil.forEach(function(surat) {
+            var suratDiv = document.createElement('div');
+            suratDiv.classList.add('surah');
+            suratDiv.className = 'container';
+
+            var namaSurah = document.createElement('h2');
+            namaSurah.className = 'nama';
+            namaSurah.textContent = surat.nama;
+
+            var asmaSurah = document.createElement('h3');
+            asmaSurah.className = 'asma';
+            asmaSurah.textContent = surat.asma;
+
+            var ayatSurah = document.createElement('p');
+            ayatSurah.className = 'jumlah-ayat';
+            ayatSurah.textContent = "Jumlah ayat : " + surat.ayat;
+
+            var artiSurah = document.createElement('p');
+            artiSurah.className = 'arti';
+            artiSurah.textContent = "Meaning : " + surat.arti;
+
+            suratDiv.appendChild(namaSurah);
+            suratDiv.appendChild(asmaSurah);
+            suratDiv.appendChild(ayatSurah);
+            suratDiv.appendChild(artiSurah);
+
+            resultDiv.appendChild(suratDiv);
+        }) 
+    }
+    </script>
+</body>
+</html>
